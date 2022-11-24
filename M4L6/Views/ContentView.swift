@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var model = PersonModel()
+    @EnvironmentObject var model: PersonModel
+    //@ObservedObject var model = PersonModel()
     //@State var tabIndex = 2
     
     var body: some View {

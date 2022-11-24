@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SwitcherTabView: View {
     
-    @State var tabIndex = 2
+    @State var tabIndex = 1
     
     var body: some View {
         
@@ -24,10 +24,10 @@ struct SwitcherTabView: View {
                     }
                 }
                 .tag(1)
-            VStack {
-                Text("Toggles")
-            }
-            
+//            VStack {
+//                Text("Toggles")
+//            }
+            SettingsToggleView()
             .tabItem {
                 VStack {
                     Image(systemName: "gearshape.2")
@@ -37,7 +37,7 @@ struct SwitcherTabView: View {
                 
             }
             .tag(2)
-        }
+        }.environmentObject(PersonModel())
     }
 }
 
