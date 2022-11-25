@@ -9,30 +9,20 @@ import Foundation
 
 class PersonModel: ObservableObject {
     
-   @Published var people = [Person]()
+    @Published var showName = true
+    @Published var showAddress = true
+    @Published var showCompany = true
+    @Published var showYears = true
+    
+     var people = [Person]()
     
     init() {
         
-        
         // create an instance of DataService and get the data
-        
-//        let service = DataService()
-//
-//        self.recipes = service.getLocalData()
-        
-        // could also write
-   //     self.recipes = DataService().getLocalData()
-        
+    
         // by making the DataService method static we create a 'type' method and can write the code like this
         
         self.people = DataService.getLocalData()
-        
-        
-        // Set the recipies property
-        
-        
-        
+      
     }
-    
-    
 }

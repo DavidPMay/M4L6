@@ -24,7 +24,6 @@ class DataService {
             return [Person]()
         }
         
-        
         // Create a URL object
         
         //let url = URL(fileURLWithPath: pathString!)
@@ -48,10 +47,7 @@ class DataService {
                     p.ID = UUID()
                     
                     
-                    // Add unique ID to ingredients
-                    // for i in r.ingredients {
-                    //    i.id = UUID()
-                    // }
+                    // Add unique ID 
                 }
                 
                 // Return the people
@@ -64,11 +60,7 @@ class DataService {
                 print("Error1")
                 print(error)
                 
-            }
-            
-            
-            
-            
+            }        
         }
         catch {
             

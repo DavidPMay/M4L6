@@ -15,7 +15,7 @@ struct SwitcherTabView: View {
         
         TabView (selection: $tabIndex) {
             
-                ContentView()
+                ListOfPeopleView()
                 .tabItem {
                     VStack {
                         Image(systemName: "person.3.fill")

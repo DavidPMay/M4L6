@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ListOfPeopleView.swift
 //  M4L6
 //
 //  Created by David May on 10/26/22.
@@ -7,22 +7,40 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ListOfPeopleView: View {
     
     @EnvironmentObject var model: PersonModel
-    //@ObservedObject var model = PersonModel()
-    //@State var tabIndex = 2
+   
     
     var body: some View {
         VStack (alignment: .leading){
+            Text("People")
+                .font(.largeTitle)
+                .fontWeight(.heavy)
+                .multilineTextAlignment(.center)
+                .bold()
+                .padding(.bottom, 17.0)
+                
             
             ForEach(model.people) {p in
                 
-                Text("Name: \(p.name)")
-                Text("Address: \(p.address)")
-                Text("Company: \(p.company)")
-                Text("Years Experience: \(p.yearsOfExperience)")
+                if model.showName {
+                    Text("Name: \(p.name)")
+                }
+                
+                if model.showAddress {
+                    Text("Address: \(p.address)")
+                }
+                if model.showCompany {
+                    Text("Company: \(p.company)")
+                }
+                if model.showYears {
+                    Text("Years Experience: \(p.yearsOfExperience)")
+                }
+                   
+               Text(" ")
                     .padding(.bottom)
+                    
                     
                 
             }
@@ -32,61 +50,15 @@ struct ContentView: View {
     }
 }
         
-//        TabView (selection: $tabIndex)
-//
-//            ForEach(model.people) { person in
-//
-//
-//                VStack {
-//                    Text(person.Name)
-//
-//                }
-//
-//
-//            }
-//
-//            Text("People")
-//                .tabItem {
-//                    VStack {
-//                        Image(systemName: "person.3.fill")
-//                            .foregroundColor(.blue)
-//                        Text("People")
-//                    }
-//                }
-//                .tag(1)
-//            VStack {
-//                Text("This is tab 2")
-//                Text("This is some more text!")
-//            }
-//            .tabItem {
-//                VStack {
-//                    Image(systemName: "star")
-//                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-//                    Text("TAB #2")
-//                }
-//
-//            }
-//            .tag(2)
-//        }
-//    }
+
     
-    
-    
-    
-//    var body: some View {
-//        VStack {
-//            Image(systemName: "globe")
-//                .imageScale(.large)
-//                .foregroundColor(.accentColor)
-//            Text("Hello, world!")
-//        }
-//        .padding()
-//    }
 
 
-struct ContentView_Previews: PreviewProvider {
+
+struct ListOfPeopleView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ListOfPeopleView()
+            .environmentObject(PersonModel())
     }
 }
 

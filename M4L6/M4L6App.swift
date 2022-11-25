@@ -11,7 +11,9 @@ import SwiftUI
 struct M4L6App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           
+            SwitcherTabView()
+            
         }
     }
 }
