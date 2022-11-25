@@ -29,5 +29,11 @@
         "address": "25 Ezekiel Ave",
         "company": "CodeWithChris",
         "yearsOfExperience": 17
+    },
+    {
+        "name": "David May",
+        "address": "226 Lincoln Drive",
+        "company": "CodeWithChris",
+        "yearsOfExperience": 0
     }
 ]

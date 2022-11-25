@@ -13,39 +13,47 @@ struct ListOfPeopleView: View {
    
     
     var body: some View {
-        VStack (alignment: .leading){
+        
+        ScrollView{
+            
             Text("People")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .multilineTextAlignment(.center)
                 .bold()
-                .padding(.bottom, 17.0)
+                .padding(.bottom, 14.0)
                 
-            
-            ForEach(model.people) {p in
+            VStack (alignment: .leading){
+               
                 
-                if model.showName {
-                    Text("Name: \(p.name)")
-                }
-                
-                if model.showAddress {
-                    Text("Address: \(p.address)")
-                }
-                if model.showCompany {
-                    Text("Company: \(p.company)")
-                }
-                if model.showYears {
-                    Text("Years Experience: \(p.yearsOfExperience)")
-                }
-                   
-               Text(" ")
-                    .padding(.bottom)
+                ForEach(model.people) {p in
                     
+                    if model.showName {
+                        Text("Name: \(p.name)")
+                    }
                     
+                    if model.showAddress {
+                        Text("Address: \(p.address)")
+                    }
+                    if model.showCompany {
+                        Text("Company: \(p.company)")
+                    }
+                    if model.showYears {
+                        Text("Years Experience: \(p.yearsOfExperience)")
+                    }
+                       
+                   Text(" ")
+                        .padding(.bottom)
+                        
+                        
+                    
+                }
                 
             }
             
         }
+    
+        
         
     }
 }
